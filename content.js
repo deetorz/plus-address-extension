@@ -3,23 +3,20 @@
   const WRAPPER_CLASS = 'plus-address-wrapper';
   const processed = new WeakSet();
 
-  // Extract root domain (no subdomain, no TLD complexity needed)
   function getRootDomain() {
     const hostname = window.location.hostname;
     const parts = hostname.replace(/^www\./, '').split('.');
-    // Return just the second-to-last part (e.g. "example" from "app.example.com")
+    // Return just the second to last part ("example" instead of "app.example.com")
     if (parts.length >= 2) {
       return parts[parts.length - 2];
     }
     return parts[0];
   }
 
-  // Validate email format
   function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
   }
 
-  // Append or replace plus tag
   function applyPlusAddress(email, tag) {
     const atIndex = email.indexOf('@');
     if (atIndex === -1) return email;
@@ -27,13 +24,11 @@
     const local = email.slice(0, atIndex);
     const domain = email.slice(atIndex);
 
-    // Strip existing plus tag if present
     const baseLocal = local.includes('+') ? local.slice(0, local.indexOf('+')) : local;
 
     return `${baseLocal}+${tag}${domain}`;
   }
 
-  // Detect email-related inputs
   function isEmailField(input) {
     if (input.type === 'email') return true;
     const name = (input.name || '').toLowerCase();
@@ -42,10 +37,10 @@
     const autocomplete = (input.autocomplete || '').toLowerCase();
 
     return (
-      autocomplete.includes('email') ||
       name.includes('email') ||
       id.includes('email') ||
-      placeholder.includes('email')
+      placeholder.includes('email') ||
+      autocomplete.includes('email')
     );
   }
 
@@ -54,10 +49,10 @@
     btn.type = 'button';
     btn.className = BUTTON_CLASS;
     btn.setAttribute('aria-label', 'Append plus address');
+    // Prevents user from tabbing to the button
     btn.setAttribute('tabindex', '-1');
     btn.title = `Add +${getRootDomain()} to your email`;
 
-    // SVG icon: matches toolbar icon — blue rounded square, @ center, + badge top-right
     btn.innerHTML = `
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Blue rounded square background -->
@@ -72,7 +67,7 @@
     `;
 
     btn.addEventListener('mousedown', (e) => {
-      e.preventDefault(); // Don't steal focus from input
+      e.preventDefault();
       const raw = input.value.trim();
       if (!isValidEmail(raw)) return;
 
@@ -90,7 +85,6 @@
       input.dispatchEvent(new Event('input', { bubbles: true }));
       input.dispatchEvent(new Event('change', { bubbles: true }));
 
-      // Brief success flash
       btn.classList.add('plus-address-btn--success');
       setTimeout(() => btn.classList.remove('plus-address-btn--success'), 800);
     });
@@ -144,7 +138,6 @@
     input.addEventListener('blur', hideButton);
     input.addEventListener('input', updateButtonState);
 
-    // If field is already focused when we attach (rare but possible)
     if (document.activeElement === input) showButton();
   }
 
