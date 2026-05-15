@@ -18,6 +18,8 @@ If `you+somesite@gmail.com` starts receiving spam from an unrelated sender, you 
 
 ## Demo
 
+<img width="482" height="106" alt="recording" src="https://github.com/user-attachments/assets/0f3d964b-0e8e-44c8-b9d9-719d1f8ebd77" />
+
 ## Installation
 
 ### Chrome Web Store
