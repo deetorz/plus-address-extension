@@ -12,7 +12,7 @@ you@gmail.com → you+sitename@gmail.com
 
 No config. No account. No data sent anywhere. Purely local.
 
-## Why
+## Why use this extension?
 
 If `you+somesite@gmail.com` starts receiving spam from an unrelated sender, you know somesite leaked or sold your email. Block that address and move on.
 
