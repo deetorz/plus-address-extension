@@ -18,7 +18,7 @@ If `you+somesite@gmail.com` starts receiving spam from an unrelated sender, you 
 
 ## Demo
 
-> 📸 _Screenshot or GIF here_
+<img width="522" height="224" alt="Recording 2026-05-16 001727" src="https://github.com/user-attachments/assets/02601880-59cb-46e2-9574-234d16971757" />
 
 ## Installation
 
