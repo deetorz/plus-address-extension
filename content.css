@@ -1,0 +1,73 @@
+/* Plus Address Extension - Injected Styles */
+
+.plus-address-wrapper {
+  position: relative !important;
+  display: inline-block;
+}
+
+.plus-address-btn {
+  position: absolute !important;
+  right: 6px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 20px !important;
+  height: 20px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 5px !important;
+  background: transparent !important;
+  color: #9ca3af !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.15s ease, background 0.1s ease, color 0.1s ease !important;
+  z-index: 2147483647 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  flex-shrink: 0 !important;
+}
+
+/* Visible when field is focused */
+.plus-address-btn--visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Dimmed when email is not yet valid */
+.plus-address-btn--visible:not(.plus-address-btn--active) {
+  opacity: 0.3 !important;
+  cursor: default !important;
+}
+
+/* Enabled state */
+.plus-address-btn--visible.plus-address-btn--active {
+  opacity: 1 !important;
+  color: #6b7280 !important;
+}
+
+.plus-address-btn--visible.plus-address-btn--active:hover {
+  background: #f3f4f6 !important;
+  color: #4F7CFF !important;
+}
+
+.plus-address-btn--visible.plus-address-btn--active:active {
+  background: #e5e7eb !important;
+  transform: translateY(-50%) scale(0.92) !important;
+}
+
+/* Success flash */
+.plus-address-btn--success {
+  color: #22c55e !important;
+  background: #f0fdf4 !important;
+}
+
+/* Ensure the input has room for the button */
+.plus-address-wrapper input {
+  padding-right: 36px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
