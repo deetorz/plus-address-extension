@@ -18,7 +18,7 @@ If `you+somesite@gmail.com` starts receiving spam from an unrelated sender, you 
 
 ## Demo
 
-https://github.com/user-attachments/assets/b7a4d05a-cfe8-47de-8aeb-bf1a5d72b612
+<video src="https://github.com/user-attachments/assets/b7a4d05a-cfe8-47de-8aeb-bf1a5d72b612" autoplay loop muted playsinline width="600"></video>
 
 ## Installation
 
