@@ -22,8 +22,7 @@ If `you+somesite@gmail.com` starts receiving spam from an unrelated sender, you 
 
 ## Installation
 
-### Chrome Web Store
-> _Coming soon_
+### [Chrome Web Store](https://chromewebstore.google.com/detail/plus-address/iiiacmldgbpkejbiipimcamaphlchijg?authuser=0&hl=en)
 
 ### Manual (Developer Mode)
 1. Download or clone this repo
